@@ -7,9 +7,11 @@ int main(){
     float area;
     float PIB;
     int turisticos;
+    float DensidadePopulacional;
+    float PIBPerCapita;
 /*Os dados acima são, respectivamente, dados referente a: Estado, Código da carta,
 Nome da cidade, População, Área em quilometros quadrado, PIB, Número de pontos tu
-rísticos.*/
+rísticos, Densidade Populacional e PIB per capita*/
    
 // Dados da primeira carta
 printf("Digite a seguir os dados de uma carta: \n");
@@ -34,6 +36,8 @@ scanf("%f", &PIB);
 printf("Insira o número dos pontos turísticos da cidade:  \n");
 scanf("%d", &turisticos);
 
+DensidadePopulacional = (float) populacao / area; 
+PIBPerCapita = (float) PIB / populacao;
 
 
 /* Dados a seguir da segunda carta*/
@@ -45,6 +49,8 @@ int populacao2;
 float area2;
 float PIB2;
 int turisticos2;
+float DensidadePopulacional2;
+float PIBPerCapita2;
 
 // Dados da segunda carta
 printf("Agora, digite os dados de outra carta: \n");
@@ -69,13 +75,19 @@ scanf("%f", &PIB2);
 printf("Insira o número de pontos turísticos da cidade: \n");
 scanf("%d", &turisticos2);
 
+DensidadePopulacional2 = (float) populacao2 / area2;
+PIBPerCapita2 = (float) PIB2 / populacao2;
+
+
 
 //Apresentação para o usuário dos dados das duas cartas decritas anteriormente
 printf("Os dados da primeira carta. \n" "Estado: %s - Código da carta: %s - Nome da cidade: %s - Quantidade populacional: %d - "
-    "Área da cidade (km^2): %.2f - PIB da cidade: %f - Quantidade de pontos turísticos: %d \n",estado,codigo, cidade, populacao, area, PIB, turisticos);
+    "Área da cidade (km^2): %.2f km^2 - PIB da cidade: %f - Quantidade de pontos turísticos: %d \n" "Densidade Populacional (área/km^2): %.2f área/km^2 - PIB per Capita: %.2f reais \n",estado,codigo, cidade, populacao, area, PIB, turisticos, DensidadePopulacional, PIBPerCapita);
 
 printf("Os dados da segunda carga. \n" "Estado: %s - Código da carta: %s - Nome da cidade: %s - Quantidade populacional: %d - "
-    "Área da cidade (km^2): %.2f - PIB da cidade: %f - Quantidade de pontos turísticos: %d \n", estado2, codigo2, cidade2, populacao2, area2, PIB2,turisticos2);
+    "Área da cidade (km^2): %.2f km^2 - PIB da cidade: %f - Quantidade de pontos turísticos: %d \n" "Densidade Populacional (área/km^2): %.2f área/km^2 - PIB per Capita: %.2f reais \n", estado2, codigo2, cidade2, populacao2, area2, PIB2,turisticos2, DensidadePopulacional2, PIBPerCapita2);
+
+
 
     return 0;
 
