@@ -102,7 +102,7 @@ unsigned long int comparacao5 = DensidadePopulacional > DensidadePopulacional2;
 float comparacao6 = PIBPerCapita > PIBPerCapita2;
 float comparacao7 = SuperPoder > SuperPoder2;
 
-printf("Coparação das cartas\n");
+printf("Comparação das cartas\n");
 printf("População: Carta 2 venceu (%d)\n", comparacao1);
 printf("Área: Carta 2 venceu (%d)\n", comparacao2);
 printf("PIB: Carta 2 venceu (%d)\n", comparacao3);
