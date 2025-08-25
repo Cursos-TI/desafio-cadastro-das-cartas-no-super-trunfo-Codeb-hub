@@ -98,16 +98,16 @@ float comparacao1 = populacao > populacao2;
 float comparacao2 = area > area2;
 float comparacao3 = PIB > PIB2;
 float comparacao4 = turisticos > turisticos2;
-unsigned long int comparacao5 = DensidadePopulacional > DensidadePopulacional2;
+unsigned long int comparacao5 = DensidadePopulacional < DensidadePopulacional2;
 float comparacao6 = PIBPerCapita > PIBPerCapita2;
 float comparacao7 = SuperPoder > SuperPoder2;
 
-printf("Comparação das cartas\n");
+printf("Coparação das cartas\n");
 printf("População: Carta 2 venceu (%d)\n", comparacao1);
 printf("Área: Carta 2 venceu (%d)\n", comparacao2);
 printf("PIB: Carta 2 venceu (%d)\n", comparacao3);
 printf("Pontos Turísticos: Carta 2 venceu (%d)\n", comparacao4);
-printf("Densidade Populacional: Carta 2 venceu (%d)\n", comparacao5);
+printf("Densidade Populacional: Carta 1 venceu (%d)\n", comparacao5);
 printf("PIB per capita: Carta 2 venceu (%d)\n", comparacao6);
 printf("Super Poder: Carta 2 venceu (%d)\n", comparacao7);
 
