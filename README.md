@@ -1,121 +1,114 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 int main(){
-    char estado [6] = "P";
-    char codigo[6] = "P01";
-    char cidade [50] = "Igarassu";
-    unsigned long int  populacao = 122312;
-    float area = 305;
-    float PIB = 3500000;
-    int turisticos = 5;
-    float DensidadePopulacional;
-    float PIBPerCapita;
-    float SuperPoder;
-/*Os dados acima são, respectivamente, dados referente a: Estado, Código da carta,
-Nome da cidade, População, Área em quilometros quadrado, PIB, Número de pontos tu
-rísticos, Densidade Populacional, PIB per capita e o Super Poder da carta 1*/
-   
-// Dados da primeira carta
-printf("Digite a seguir os dados de uma carta: \n");
-printf("Insira o nome do estado: \n");
-scanf("%5s", estado);
-
-printf("Insira o código da carta: \n");
-scanf("%5s", codigo);
-
-printf("Insira o nome da cidade: \n");
-scanf("%49s", cidade);
-
-printf("Insira a quantidade populacional: \n");
-scanf("%d",&populacao);
-
-printf("Insira a área da cidade (km^2):  \n");
-scanf("%f", &area);
-
-printf("Insira o PIB da cidade:  \n");
-scanf("%f", &PIB);
-
-printf("Insira o número dos pontos turísticos da cidade:  \n");
-scanf("%d", &turisticos);
-
-DensidadePopulacional = (float) populacao / area; 
-PIBPerCapita = (float) PIB / populacao;
-SuperPoder = (float) (populacao + area + PIB + turisticos + PIBPerCapita) + (1.0/DensidadePopulacional);
 
 
+    /*Dados da primeira carta para facilitar a visualição do jogador e saber qual atributo escolher*/
+char pais [6];
+int populacao = 216;
+float area = 8.5;
+float PIB = 2.17;
+int PontosTuristicos = 25;
+float DensidadeDemografica = (float) populacao / area;
 
-/* Dados a seguir da segunda carta*/
+printf("Dados da CARTA1\n");
+printf("País: Brasil\n");
+printf("População: 216mi\n");
+printf("Área: 8.5mi km^2\n");
+printf("PIB: 2.17tri\n");
+printf("Pontos Turísticos: 25\n"); //Os dados de pontos turísticos foram só um exemplo pois não havia dizendo ao certo quantos exatamente.
 
-char estado2[6] = "P";
-char codigo2[6] = "P02";
-char cidade2 [50] = "Paulista"; 
-unsigned long int populacao2 = 3500000000;
-float area2 = 93;
-float PIB2 = 5600000000;
-int turisticos2 = 6;
-float DensidadePopulacional2;
-float PIBPerCapita2;
-unsigned long int SuperPoder2;
+/*Dados da segunda carta*/
+char pais2 [6];
+int populacao2 = 40;
+float area2 = 10.0;
+float PIB2 = 2.14;
+int PontosTuristicos2 = 22;
+float DensidadeDemografica2 = (float) populacao2 / area2;
 
-// Dados da segunda carta
-printf("Agora, digite os dados de outra carta: \n");
-printf("Insira o nome do estado: \n");
-scanf("%5s", estado2);
-
-printf("Insira o código da carta: \n");
-scanf("%5s", codigo2);
-
-printf("Insira o nome da cidade: \n");
-scanf("%49s", cidade2);
-
-printf("Insira a quantidade populacional: \n");
-scanf("%d", &populacao2);
-
-printf("Insira a área da cidade (km^2): \n");
-scanf ("%f", &area2);
-
-printf("Insira o PIB da cidade: \n");
-scanf("%f", &PIB2);
-
-printf("Insira o número de pontos turísticos da cidade: \n");
-scanf("%d", &turisticos2);
-
-DensidadePopulacional2 = (float) populacao2 / area2;
-PIBPerCapita2 = (float) PIB2 / populacao2;
-SuperPoder2 = (float) (populacao2 + area2 + PIB2 + turisticos2 + PIBPerCapita2) + (1.0/DensidadePopulacional2);
-
-
-//Apresentação para o usuário dos dados das duas cartas decritas anteriormente
-printf("Os dados da primeira carta. \n" "Estado: %s - Código da carta: %s - Nome da cidade: %s - Quantidade populacional: %d - "
-    "Área da cidade (km^2): %.2f km^2 - PIB da cidade: %f - Quantidade de pontos turísticos: %d \n" "Densidade Populacional (área/km^2): %.2f área/km^2 - PIB per Capita: %.2f reais \n",estado,codigo, cidade, populacao, area, PIB, turisticos, DensidadePopulacional, PIBPerCapita);
-
-printf("Os dados da segunda carga. \n" "Estado: %s - Código da carta: %s - Nome da cidade: %s - Quantidade populacional: %d - "
-    "Área da cidade (km^2): %.2f km^2 - PIB da cidade: %f - Quantidade de pontos turísticos: %d \n" "Densidade Populacional (área/km^2): %.2f área/km^2 - PIB per Capita: %.2f reais \n", estado2, codigo2, cidade2, populacao2, area2, PIB2,turisticos2, DensidadePopulacional2, PIBPerCapita2);
+printf("Dados da CARTA2\n");
+printf("País: Canadá\n");
+printf("População: 40mi\n");
+printf("Área:10mi km^2\n");
+printf("PIB: 2.14tri\n");
+printf("Pontos Turísticos: 22\n"); //Os dados de pontos turísticos foram só um exemplo pois não havia dizendo ao certo quantos exatamente.
 
 
 //Comparação das cartas
+int atributo;
+printf("###Com base nas informações adquiridas sobre as cartas, qual atributo você escolhe para comparar as cartas?###\n");
+printf("1.População\n");
+printf("2.Área\n");
+printf("3.PIB\n");
+printf("4.Pontos Turísticos\n"); 
+printf("5.Densidade Demográfica\n");
+printf("Insira um número:\n");
+scanf("%d", &atributo);
 
-float comparacao1 = populacao > populacao2;
-float comparacao2 = area > area2;
-float comparacao3 = PIB > PIB2;
-float comparacao4 = turisticos > turisticos2;
-unsigned long int comparacao5 = DensidadePopulacional < DensidadePopulacional2;
-float comparacao6 = PIBPerCapita > PIBPerCapita2;
-float comparacao7 = SuperPoder > SuperPoder2;
-
-printf("Coparação das cartas\n");
-printf("População: Carta 2 venceu (%d)\n", comparacao1);
-printf("Área: Carta 2 venceu (%d)\n", comparacao2);
-printf("PIB: Carta 2 venceu (%d)\n", comparacao3);
-printf("Pontos Turísticos: Carta 2 venceu (%d)\n", comparacao4);
-printf("Densidade Populacional: Carta 1 venceu (%d)\n", comparacao5);
-printf("PIB per capita: Carta 2 venceu (%d)\n", comparacao6);
-printf("Super Poder: Carta 2 venceu (%d)\n", comparacao7);
-
-
-
-
-return 0;
-
+switch (atributo)
+{
+case 1:
+    printf("1.População\n");
+    if (populacao>populacao2) 
+   {
+        printf("Carta 1 Brasil - venceu!\n");
+    } else
+    {
+        printf("Carta 1 Brasil - perdeu!\n");
+    }
     
+    
+    break;
+    case 2:
+    printf("2.Área km^2\n");
+    if (area>area2) 
+   {
+        printf("Carta 2 Canadá- venceu!\n");
+    } else
+    {
+        printf("Carta 2 Canadá - perdeu!\n");
+    }
+    
+    break;
+    case 3:
+    printf("3.PIB\n");
+    if (PIB>PIB2) 
+   {
+        printf("Carta 1 Brasil - venceu!\n");
+    } else
+    {
+        printf("Carta 1 Brasil - perdeu\n");
+    }
+    
+    break;
+    case 4:
+    printf("4.Pontos Turíticos\n");
+    if (PontosTuristicos>PontosTuristicos2) 
+   {
+        printf("Carta 1 Brasil - venceu!\n");
+    } else
+    {
+        printf("Carta 1 Brasil - perdeu\n");
+    }
+    
+    break;
+    case 5:
+    printf("5.Densidade Demográfica\n");
+    if (DensidadeDemografica>DensidadeDemografica2) 
+   {
+        printf("Carta 2 Canadá - venceu!\n");
+    } else
+    {
+        printf("Carta 2 Canadá - perdeu\n");
+    }
+    
+    break;
+default:
+printf("Opção Inválida!");
+    break;
+}
+
+
 
 }
